@@ -1,5 +1,5 @@
-person1= $ram
-person2= $sam
+person1= ram
+person2= sam
 
 echo "$person1:: HI $person2"
 echo "$person2:: hello $person1"
