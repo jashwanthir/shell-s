@@ -34,6 +34,7 @@ else
     echo "mysql is already installed" 
 fi
 
+dnf list installed git &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then 
