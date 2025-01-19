@@ -13,7 +13,8 @@ VALIDATE(){
         echo  "$2 is success" &>>$LOG_FILE_NAME
     fi
 }
-echo "script started excuted at :: $TIMESTAMP " &>>$LOG_FILE_NAME
+
+echo "script started excuted at :: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 if [ $USERID -ne 0 ]
 then 
@@ -21,11 +22,11 @@ then
     exit1
 fi
 
-
+dnf list installed mysql &>>$LOG_FILE_NAME
 
  if [ $? -ne 0 ]
  then 
-    dnf intall mysql -y &>>$LOG_FILE_NAME
+    dnf intall mysql -y 
 else
     echo "mysql is already installed" &>>$LOG_FILE_NAME
 fi
@@ -33,7 +34,7 @@ fi
 
 if [ $? -ne 0 ]
 then 
-    dnf install git -y &>>$LOG_FILE_NAME
+    dnf install git -y 
 else
     echo  "git is already installed" &>>$LOG_FILE_NAME
 fi 
