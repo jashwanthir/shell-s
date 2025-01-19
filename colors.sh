@@ -15,7 +15,7 @@ VALIDATE(){
 
 if [ $USERID -ne 0 ]
 then
-    echo " $R error::you must have sudo access"
+    echo -e" $R error::you must have sudo access"
     exit 1
 fi
 
@@ -24,7 +24,7 @@ then
     dnf install mysql -y 
     exit 1
 else 
-    echo "mysql is already... $Y installed"
+    echo -e "mysql is already... $Y installed"
 fi
  
 if [ $? -ne 0 ]
@@ -32,5 +32,5 @@ then
     dnf install git -y 
     exit 1
 else 
-    echo "git is already ... $Y installed "
+    echo -e "git is already ... $Y installed "
 fi
