@@ -7,17 +7,17 @@ LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIME_STAMP.LOG"
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo " $2 is failure "
+        echo "$2 is failure"
         exit1
     else
-        echo " $2 is success " &>>$LOG_FILE_NAME
+        echo  "$2 is success" &>>$LOG_FILE_NAME
     fi
 }
 echo "script started excuted at :: $TIMESTAMP " &>>$LOG_FILE_NAME
 
 if [ USERID -ne 0 ]
 then 
-    echo "error- need sudo access to excute "
+    echo "error :: need sudo access to excute"
     exit1
 fi
 
@@ -27,12 +27,13 @@ fi
  then 
     dnf intall mysql -y &>>$LOG_FILE_NAME
 else
-    echo " mysql is already installed " &>>$LOG_FILE_NAME
+    echo "mysql is already installed" &>>$LOG_FILE_NAME
 fi
+
 
 if [ $? ne 0 ]
 then 
     dnf install git -y &>>$LOG_FILE_NAME
 else
-    echo " git is already installed " &>>$LOG_FILE_NAME
+    echo  "git is already installed" &>>$LOG_FILE_NAME
 fi 
