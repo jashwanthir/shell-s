@@ -10,7 +10,7 @@ VALIDATE(){
         echo "$2 is failure"
         exit1
     else
-        echo  "$2 is success" &>>$LOG_FILE_NAME
+        echo  "$2 is success" &>>
     fi
 }
 
@@ -27,14 +27,16 @@ dnf list installed mysql  &>>$LOG_FILE_NAME
  if [ $? -ne 0 ]
  then 
     dnf intall mysql -y 
+    VALIDATE $? "Installing MySQL"
 else
-    echo "mysql is already installed" &>>$LOG_FILE_NAME
+    echo "mysql is already installed" 
 fi
 
 
 if [ $? -ne 0 ]
 then 
-    dnf install git -y 
+    dnf install git -y &>>$LOG_FILE_NAME
+    VALIDATE $? "Installing MySQL"
 else
-    echo  "git is already installed" &>>$LOG_FILE_NAME
+    echo  "git is already installed" 
 fi 
