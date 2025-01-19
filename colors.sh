@@ -32,5 +32,5 @@ then
     dnf install git -y 
     exit 1
 else 
-    echo -e "git is already ... $Y installed "
+    echo -e "git is already... $Y installed "
 fi
