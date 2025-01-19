@@ -1,4 +1,4 @@
-USERID=$( id -u )
+USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -13,7 +13,7 @@ VALIDATE(){
     fi
 }
 
-if ( $USERID -ne 0 )
+if [ $USERID -ne 0 ]
 then
     echo " $R error::you must have sudo access"
     exit 1
