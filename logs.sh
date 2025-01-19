@@ -31,7 +31,7 @@ else
 fi
 
 
-if [ $? ne 0 ]
+if [ $? -ne 0 ]
 then 
     dnf install git -y &>>$LOG_FILE_NAME
 else
