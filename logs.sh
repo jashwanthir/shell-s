@@ -1,6 +1,6 @@
 USERID=$(id -u)
 LOG_FOLDER="/var/log/shellscript-log"
-LOG_FILE=$( echo $0 | cut -d "." -f1)
+LOG_FILE=$(echo $0 | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%D-%H-%S)
 LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIME_STAMP.LOG" 
 
@@ -17,7 +17,7 @@ echo "script started excuted at :: $TIMESTAMP " &>>$LOG_FILE_NAME
 
 if [ $USERID -ne 0 ]
 then 
-    echo "error :: need sudo access to excute"
+    echo "error:: need sudo access to excute"
     exit1
 fi
 
