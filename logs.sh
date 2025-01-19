@@ -2,7 +2,7 @@ USERID=$(id -u)
 LOG_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$( echo $0 | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%D-%H-%S)
-LOG_FILE_NAME="LOG_FOLDER/LOG_FILE-TIME_STAMP.LOG" &>>$LOG_FILE_NAME
+LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIME_STAMP.LOG" 
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -23,7 +23,7 @@ fi
 
 
 
- if [ $? ne 0 ]
+ if [ $? -ne 0 ]
  then 
     dnf intall mysql -y &>>$LOG_FILE_NAME
 else
