@@ -1,3 +1,5 @@
+#/bin/bash
+
 USERID=$(id -u)
 LOG_FOLDER="/var/log/shellscript-log"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
