@@ -12,7 +12,7 @@ VALIDATE(){
         echo " $2 is success "
     fi
 }
-if ( USERID -ne 0 )
+if ( $USERID -ne 0 )
 then
     echo " $R error::you must have sudo access"
     exit 1
