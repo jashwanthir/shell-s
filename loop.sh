@@ -1,6 +1,6 @@
 #/bin/bash
 
-for i in {0.....65}
+for i in {0..65}
 do
-    echo "print $i"
+    echo $i
 done
